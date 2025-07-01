@@ -1,0 +1,50 @@
+{% block content %}
+    {% block success_message %} Success, {{ message }} {% endblock %}
+    {% block StudentForm %}
+    <div id="student_window" class="center_div">
+      <h3 class="title_style">Search Students</h3>
+      <form 
+      method="post"
+      class="custom_form"
+      >
+        <input
+          type="number"
+          name="grade"
+          hx-post="/fetch_students_by_grade"
+          hx-trigger="keyup changed delay:500ms"
+          hx-target="#View_Helper"
+          hx-swap="innerHtml"
+          placeholder="Search..."
+          autocomplete="off"
+          onkeydown="if(event.key==='Enter'){event.preventDefault();}"
+          style="ime-mode:disabled;"
+          formnovalidate
+        />
+      </form>
+      <div id = "View_Helper"></div>
+    </div>
+    {% endblock %}
+    {% block students_table %}
+    <table class="table_style">
+      <tr>
+        <th>Student ID</th>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Grade</th>
+        <th>Date of Birth</th>
+      </tr>
+      {% for student in students %}
+      <tr>
+        <td>{{student.id}}</td>
+        <td>{{student.first_name}}</td>
+        <td>{{student.middle_name}}</td>
+        <td>{{student.last_name}}</td>
+        <td>{{student.grade}}</td>
+        <td>{{student.dob}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endblock %}
+{% endblock %}
+

@@ -1,0 +1,13 @@
+<div x-data="{ isOpened: false }">
+  <button
+    name="Departments"
+    class="General_select_class"
+    @click="isOpened = !isOpened"
+  >
+    Departments
+  </button>
+  <ul class="custom_ul" x-show="isOpened">
+    <li>Add a Department</li>
+    <li>View Departments</li>
+  </ul>
+</div>

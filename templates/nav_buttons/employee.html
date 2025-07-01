@@ -1,0 +1,13 @@
+<div x-data="{ isOpened: false }">
+  <button
+    name="Employee"
+    class="General_select_class"
+    @click="isOpened = !isOpened"
+  >
+    Employee
+  </button>
+  <ul class="custom_ul" x-show="isOpened">
+    <li>Register Employee</li>
+    <li>View Employee</li>
+  </ul>
+</div>

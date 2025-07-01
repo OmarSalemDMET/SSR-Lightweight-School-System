@@ -1,0 +1,26 @@
+{%- block register_student_form-%}
+<div class="center_div">
+<h3 class="title_style">Register Student</h3>
+<form method="post" class="custom_form">
+  <input id="first_name_id" name="first_name" type="text" placeholder="First Name" />
+  <input id="middle_name_id" name="middle_name" type="text" placeholder="Middle Name" />
+  <input id="last_name_id" name="last_name" type="text" placeholder="Last Name" />
+  <input id="dob_id" name="dob" type="date" placeholder="Date of Birth" />
+  <input id="nationality_id" name="nationality" type="text" placeholder="Nationality" />
+  <input id="grade_id" name="grade" type="number" placeholder="Grade" />
+  <input id="user_name_id" name="user_name" type="text" placeholder="Username" />
+  <input id="password_id" name="password" type="password" placeholder="Password" />
+  <input
+      type="submit"
+      value="Ok"
+      hx-post="/register_student"
+      hx-target="#message_target"
+      hx-swap="innerHTML"
+  />
+</form>
+<div id="message_target"></div>
+</div>
+{%- endblock-%}
+
+
+

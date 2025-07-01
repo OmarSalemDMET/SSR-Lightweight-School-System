@@ -1,0 +1,111 @@
+<section class="professional-hero">
+  <div class="professional-hero__content">
+    <h1 class="professional-hero__title">Welcome to the School System</h1>
+  </div>
+
+  <div class="background-elements">
+    <div class="bubble" style="--size:50px; --delay:0s; --pos:15%;"></div>
+    <div class="bubble" style="--size:30px; --delay:2s; --pos:35%;"></div>
+    <div class="bubble" style="--size:60px; --delay:4s; --pos:50%;"></div>
+    <div class="bubble" style="--size:25px; --delay:1s; --pos:70%;"></div>
+    <div class="bubble" style="--size:40px; --delay:3s; --pos:85%;"></div>
+  </div>
+
+  <style>
+    .professional-hero {
+      position: relative;
+      padding: 4rem;
+      min-height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      overflow: hidden;
+      color: #333;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .professional-hero__content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .professional-hero__title {
+      margin: 0 0 0.75rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #005A9C; /* A more corporate, deep blue */
+      opacity: 0;
+      text-shadow: 0 0 15px rgba(0, 90, 156, 0.3);
+      animation: fadeInUp 1s 0.2s forwards, subtleGlow 3s infinite alternate;
+    }
+
+    .professional-hero__subtitle {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #4A4A4A;
+      opacity: 0;
+      animation: fadeInUp 1s 0.5s forwards;
+    }
+
+    .background-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -150px;
+      left: var(--pos);
+      width: var(--size);
+      height: var(--size);
+      background: rgba(0, 90, 156, 0.1); /* Match the new corporate blue */
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: bubbleUp 15s var(--delay) linear infinite;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes subtleGlow {
+      from {
+        text-shadow: 0 0 15px rgba(0, 90, 156, 0.3);
+      }
+      to {
+        text-shadow: 0 0 25px rgba(0, 90, 156, 0.4);
+      }
+    }
+
+    @keyframes bubbleUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-150vh) scale(1.1);
+        opacity: 0;
+      }
+    }
+  </style>
+</section>

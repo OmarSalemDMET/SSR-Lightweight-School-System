@@ -1,0 +1,45 @@
+{%- block add_course -%}
+<form method="post">
+  <input type="text" name="c_name" id="course_name" placeholder="Course Name" />
+  <input
+    type="text"
+    name="description"
+    id="course_description"
+    placeholder="Description"
+  />
+  <div id="departments">
+    <button
+      hx-post="/fetch_all_departments"
+      hx-target="departments"
+      hx-swap="innerHTML"
+    >
+      Select a Departments
+    </button>
+  </div>
+</form>
+{%- endblock -%} 
+
+{%-block FetchDepartmentsOptions -%}
+<select name="department_id">
+  {%- for department in departments -%}
+  <option value="{{department.id}}">{{department.d_name}}</option>
+  {%- endfor -%}
+</select>
+{%- endblock -%}
+
+{%-block FetchDepartmentsOptions -%}
+<select name="department_id">
+  {%- for department in departments -%}
+  <option value="{{department.id}}">{{department.d_name}}</option>
+  {%- endfor -%}
+</select>
+{%- endblock -%}
+
+
+{%- block FetchCoursesOptions -%}
+<select name="c_name">
+  {%- for course in courses -%}
+  <option value="{{course.c_name}}">{{course.c_name}}</option>
+  {%- endfor -%}
+</select>
+{%- endblock -%}
