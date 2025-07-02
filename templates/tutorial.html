@@ -1,0 +1,50 @@
+{% block add_an_assignment %}
+<from method="post">
+  <input type="text" name="description" placeholder="description" />
+  <button>choose course</button>
+  <button>choose supervisor</button>
+  <input type="submit" value="Add Assignment" />
+</from>
+{% endblock %}
+
+{% block view_all_department_assignemnts%}
+<div id="assignment_view">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Course</th>
+      <th>Description</th>
+      <th>Teacher</th>
+      <th>Department</th>
+    </tr>
+    {% for assignment in assignments %}
+    <tr>
+      <td>{{assignment.id}}</td>
+      <td>{{assignment.c_name}}</td>
+      <td>{{assignment.description}}</td>
+      <td>
+        {{assignment.first_name}} {{assignment.middle_name}}
+        {{assignment.last_name}}
+      </td>
+      <td>{{assignment.d_name}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{%endblock%}
+
+{% block search_assignment_by_department %}
+    <form method="post">
+        <button>Choose Department</button>
+        <input 
+        type="submit"
+        value="search"
+        >
+    </form>
+{% endblock %}
+
+{% block search_department_by_grade %}
+    <form method="post">
+        <input name="grade" type="number" placholder="grade">
+    </form>
+{% endblock %}

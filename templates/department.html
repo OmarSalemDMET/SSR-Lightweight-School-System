@@ -1,0 +1,29 @@
+{% block add_department %}
+<from method="post">
+  <input type="text" name="d_name" placeholder="Depratment Name" />
+  <input type="text" name="description" placeholder="Description" />
+  <button>choose supervisor</button>
+  <input type="submit" value="Add Deprtment" />
+</from>
+{% endblock %} 
+
+{% block view_all_departments%}
+<div id="all_departments_container">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Construction Date</th>
+    </tr>
+    {% for department in departments%}
+    <tr>
+      <td>{{department.id}}</td>
+      <td>{{department.d_name}}</td>
+      <td>{{department.description}}</td>
+      <td>{{department.constructed.date}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}
