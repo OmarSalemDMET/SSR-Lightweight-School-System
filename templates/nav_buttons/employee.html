@@ -1,13 +1,21 @@
 <div x-data="{ isOpened: false }">
-  <button
-    name="Employee"
-    class="General_select_class"
-    @click="isOpened = !isOpened"
-  >
-    Employee
-  </button>
-  <ul class="custom_ul" x-show="isOpened">
-    <li>Register Employee</li>
-    <li>View Employee</li>
-  </ul>
+    <button
+        name="Employee"
+        class="General_select_class"
+        @click="isOpened = !isOpened"
+    >
+        Employee
+    </button>
+    <ul class="custom_ul" x-show="isOpened">
+        <li
+            hx-get="/add_employee_view"
+            hx-trigger="click"
+            hx-target="#view_target"
+            hx-swap="innerHtml"
+            @click="isOpened = !isOpened"
+        >
+            Register Employee
+        </li>
+        <li>View Employee</li>
+    </ul>
 </div>

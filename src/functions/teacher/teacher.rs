@@ -42,3 +42,5 @@ pub async fn fetch_all_supervisors(pool: web::Data<sqlx::PgPool>) -> Result<Http
         }
     }
 }
+
+

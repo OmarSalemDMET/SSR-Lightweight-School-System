@@ -29,3 +29,5 @@ pub async fn fetch_all_departments_handler(
         }
     }
 }
+
+

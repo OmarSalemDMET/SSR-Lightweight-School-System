@@ -49,6 +49,7 @@ use crate::functions::teacher::teacher::{
 use crate::functions::tutorial::tutorial::add_tutorial_handler;
 use crate::functions::tutorial::tutorial::assign_student_handler;
 use crate::functions::tutorial::tutorial::get_all_tutorials_handler;
+use crate::functions::views::employee::employee_view::add_employee_view;
 use crate::functions::views::student::register_student::register_student_view;
 use crate::functions::views::student::student_view::student_view;
 #[get("/")]
@@ -132,6 +133,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             .service(view_student_assignment_grades_handler)
             .service(student_view)
             .service(register_student_view)
+            .service(add_employee_view)
     })
     .bind(("0.0.0.0", 8080))?
     .run()
